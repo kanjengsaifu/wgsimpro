@@ -1,0 +1,465 @@
+<style type="text/css">
+#garbaw100 {
+    border-bottom: 1px dashed #999;
+    width: 100%;
+}
+</style>
+<!-- Begin: Content -->
+<section id="content">
+
+    <div class="row">
+        <div class="col-md-12 pn">
+
+            <div class="admin-form">
+
+                <div id="p1" class="panel heading-border">
+
+                    <div class="panel-body bg-light">
+                        <form method="post" action="javascript:" id="form-ui">
+                            
+                            <!-- nasabah -->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="section">
+                                        <label class="field"><b>1. DATA NASABAH</b></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="section">
+                                        <label class="field" style="padding-left:20px;">- Nama Nasabah</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="section" id="garbaw100">
+                                        <label class="field">: <?=$data['nsb_nama']?></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="section">
+                                        <label class="field" style="padding-left:20px;">- Alamat KTP</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="section" id="garbaw100">
+                                        <label class="field">: <?=$data['nsb_alamat']?></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="section">
+                                        <label class="field" style="padding-left:20px;">- Alamat Email</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="section" id="garbaw100">
+                                        <label class="field">: <?=$data['nsb_email']?></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="section">
+                                        <label class="field" style="padding-left:20px;">- Tempat / Tanggal Lahir</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="section" id="garbaw100">
+                                        <label class="field">: <?=$data['nsb_tempat_lahir']?>, <?=$data['nsb_tgl_lahir']?></label>
+                                    </div>
+                                </div>
+                                <div class="col-md-1">
+                                    <div class="section">
+                                        <label class="field">Hp</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="section" id="garbaw100">
+                                        <label class="field">: <?=$data['nsb_hp']?></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="section">
+                                        <label class="field" style="padding-left:20px;">- Alamat Domisili</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="section" id="garbaw100">
+                                        <label class="field">: <?=$data['nsb_domisili']?></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="section">
+                                        <label class="field" style="padding-left:20px;">- Penanggung Jawab</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="section">
+                                        <label class="field">&nbsp;</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="section">
+                                        <label class="field" style="padding-left:20px;">   ( Jika atas nama perusahaan )</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="section">
+                                        <label class="field">: &nbsp;</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Pekerjaan -->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="section">
+                                        <label class="field"><b>2. DATA PEKERJAAN DAN PENGHASILAN</b></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="section">
+                                        <label class="field" style="padding-left:20px;">- Nama Perusahaan</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="section" id="garbaw100">
+                                        <label class="field">: <?=$data['nsb_nama_pt']?></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="section">
+                                        <label class="field" style="padding-left:20px;">- Alamat Perusahaan</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="section" id="garbaw100">
+                                        <label class="field">: <?=$data['nsb_alamat_pt']?></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="section">
+                                        <label class="field" style="padding-left:20px;">- Kota / Kodepos</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="section" id="garbaw100">
+                                        <label class="field">: <?=$data['nsb_kota_pt']?> / <?=$data['nsb_kodepos_pt']?></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="section">
+                                        <label class="field" style="padding-left:20px;">- Telepon Kantor (area + no. + ext)</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="section" id="garbaw100">
+                                        <label class="field">: <?=$data['nsb_telp_pt']?></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="section">
+                                        <label class="field" style="padding-left:20px;">- No. Fax</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="section" id="garbaw100">
+                                        <label class="field">: <?=$data['nsb_fax_pt']?></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="section">
+                                        <label class="field" style="padding-left:20px;">- Jenis Pekerjaan dan Status</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="section" id="garbaw100">
+                                        <label class="field">: <?=$data['nsb_jenis_job']?></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="section">
+                                        <label class="field" style="padding-left:20px;">- Lama Bekerja</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="section" id="garbaw100">
+                                        <label class="field">: <?=$data['nsb_lama_kerja']?></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="section">
+                                        <label class="field" style="padding-left:20px;">- Jenis Usaha</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="section" id="garbaw100">
+                                        <label class="field">: <?=$data['nsb_jenis_usaha']?></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="section"> 
+                                        <label class="field" style="padding-left:20px;">- Jabatan</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="section" id="garbaw100">
+                                        <label class="field">: <?=$data['nsb_jabatan']?></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="section">
+                                        <label class="field" style="padding-left:20px;">- Pendapatan Kantor Tetap perbulan</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="section" id="garbaw100">
+                                        <label class="field">: <?=$data['nsb_pendapatan']?></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="section">
+                                        <label class="field" style="padding-left:20px;">- Sumber pendapatan tambahan</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="section" id="garbaw100">
+                                        <label class="field">: <?=$data['nsb_sumber_pendapatan_tambahan']?></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="section">
+                                        <label class="field" style="padding-left:20px;">- Pendapatan kantor tambahan perbulan</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="section" id="garbaw100">
+                                        <label class="field">: <?=$data['nsb_pendapatan_tambahan']?></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="section">
+                                        <label class="field" style="padding-left:20px;">- NPWP</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="section" id="garbaw100">
+                                        <label class="field">: <?=$data['nsb_npwp']?></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- tujuan -->
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="section">
+                                        <label class="field"><b>3. TUJUAN PEMBELIAN</b></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Stock -->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="section">
+                                        <label class="field"><b>4. DATA PESANAN</b></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="section">
+                                        <label class="field" style="padding-left:20px;">- Blok/Kav</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="section" id="garbaw100">
+                                        <label class="field">: <?=$data['prod_blok']?>/<?=$data['prod_kavling']?>&nbsp;&nbsp;&nbsp;&nbsp;No. <?=$data['prod_unit']?></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="section">
+                                        <label class="field" style="padding-left:20px;">- Tipe</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="section" id="garbaw100">
+                                        <label class="field">: <?=$data['prod_type']?></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="section">
+                                        <label class="field" style="padding-left:20px;">- Luas Bangunan</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="section" id="garbaw100">
+                                        <label class="field">: <?=$data['prod_luas_netto']?></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="section">
+                                        <label class="field" style="padding-left:20px;">- Luas Tanah</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="section" id="garbaw100">
+                                        <label class="field">: <?=$data['prod_luas_gross']?></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="section">
+                                        <label class="field" style="padding-left:20px;">- Kondisi Kavling</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="section" id="garbaw100">
+                                        <label class="field">: <?=$data['prod_kondisi']?></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Harga -->
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="section">
+                                        <label class="field"><b>5. TOTAL HARGA JUAL</b></label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="section" id="garbaw100">
+                                        <label class="field">Rp. <?=number_format($data['tr_jual'],2,'.',',')?></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="section">
+                                        <label class="field" style="padding-left:20px;">- Terbilang</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="section" id="garbaw100">
+                                        <label class="field">: <?=$data['terbilang']?></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Payment plan -->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="section">
+                                        <label class="field"><b>6. KESEPAKATAN PEMBAYARAN</b></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="section">
+                                        <label class="field" style="padding-left:20px;">Cara Pembayaran</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="section" id="garbaw100">
+                                        <label class="field">: <?=$data['pay_cara_bayar']?></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="section">
+                                        <label class="field" style="padding-left:20px;">a. Uang Muka</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="section" id="garbaw100">
+                                        <label class="field">Rp. <?=number_format($data['pay_um'],2,'.',',')?></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="section">
+                                        <label class="field" style="padding-left:20px;"> - Reserved</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="section" id="garbaw100">
+                                        <label class="field">Rp. <?=number_format($data['pay_reserve'],2,'.',',')?></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="section">
+                                        <label class="field" style="padding-left:20px;"> - Tanda Jadi</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="section" id="garbaw100">
+                                        <label class="field">Rp. <?=number_format($data['pay_jadi'],2,'.',',')?></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="section">
+                                        <label class="field" style="padding-left:20px;">b. Rencana KPR</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="section" id="garbaw100">
+                                        <label class="field">Rp. <?=number_format($data['pay_kpr'],2,'.',',')?></label>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+<!-- End: Content -->

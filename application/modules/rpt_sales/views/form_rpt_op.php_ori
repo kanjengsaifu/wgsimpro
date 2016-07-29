@@ -1,0 +1,244 @@
+<!-- Begin: Content -->
+<section id="content">
+
+    <div class="row">
+		<div class="col-md-12 pn">
+			<div class="panel mbn">
+				<div class="panel-body" style="overflow-x: scroll">
+					<div class="row">
+						<div class="col-md-12">
+							<!--<h4 class="mbn">PT WIJAYA KARYA REALTY</h4>-->
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 text-center">
+							<h4 class="mbn">LAPORAN KONSOLIDASI OP</h4>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 text-center">
+							<h5 class="mbn">Periode <?=@$data['periode']?></h5>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<p>Dicetak tanggal: <?=date('d').' '.@$data['periode']?>, Oleh: <?=@$data['nama']?></p>
+						</div>
+					</div>
+					<table id="example" class="table table-bordered mbn">
+						<thead>
+							<tr class="bg-primary light">
+								<th rowspan="2" class="text-center">No.</th>
+								<th rowspan="2" class="text-center">UNIT PPU</th>
+								<th colspan="6" class="text-center">Tahun ini</th>
+								<th colspan="2" class="text-center">Ra. OP 2015</th>
+							</tr>
+							<tr class="bg-primary light">
+								<th class="text-center">Minggu Lalu</th>
+								<th class="text-center">Minggu Ini</th>
+								<th class="text-center">Pembatalan Minggu Lalu</th>
+								<th class="text-center">s.d Minggu Ini</th>
+								<th class="text-center">Ra. s.d Desember</th>
+								<th class="text-center">RKAP</th>
+								<th class="text-center">OK dihadapi s.d saat ini</th>
+								<th class="text-center">+/- OK Baru</th>
+							</tr>
+						</thead>
+						<tbody>
+						<?php
+						$arrData = isset($data['datatable']) ? $data['datatable'] : array();
+						foreach($arrData as $ktype => $vtype) { ?>
+							<tr>
+								<td>&nbsp;</td>
+								<td colspan="9"><?=$ktype?></td>
+							</tr>
+						<?php 
+							$sumF1 = $sumG1 = $sumH1 = $sumI1 = $sumJ1 = $sumK1 = 0;
+							$sumF2 = $sumG2 = $sumH2 = $sumI2 = $sumJ2 = $sumK2 = 0;
+							$sumF3 = $sumG3 = $sumH3 = $sumI3 = $sumJ3 = $sumK3 = 0;
+							$sumF4 = $sumG4 = $sumH4 = $sumI4 = $sumJ4 = $sumK4 = 0;
+							$nourut = 1;
+							foreach ($vtype as $kkode => $vkode) {
+								$theF = isset($vkode['unit']['F'])?$vkode['unit']['F']:0;
+								$theG = isset($vkode['unit']['G'])?$vkode['unit']['G']:0;
+								$theH = 0;
+								$theI = $theF+$theG;
+								$theJ = isset($vkode['unit']['J'])?$vkode['unit']['J']:0;
+								$theK = 0;
+
+								$sumF1 += $theF;
+								$sumG1 += $theG;
+								$sumH1 += $theH;
+								$sumI1 += $theI;
+								$sumJ1 += $theJ;
+								$sumK1 += $theK;
+						?>
+							<tr>
+								<td><?=$nourut?></td>
+								<td colspan="9"><?=$kkode?></td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+								<td>- Unit</td>
+								<td class="text-right"><?=$theF?></td>
+								<td class="text-right"><?=$theG?></td>
+								<td class="text-right"><?=$theH?></td>
+								<td class="text-right"><?=$theI?></td>
+								<td class="text-right"><?=$theJ?></td>
+								<td class="text-right"><?=$theK?></td>
+								<td class="text-right"><?=$theI?></td>
+								<td class="text-right"><?=$theI-$theJ?></td>
+							</tr>
+						<?php 
+								$theF = isset($vkode['netto']['F'])?$vkode['netto']['F']:0;
+								$theG = isset($vkode['netto']['G'])?$vkode['netto']['G']:0;
+								$theH = 0;
+								$theI = $theF+$theG;
+								$theJ = isset($vkode['netto']['J'])?$vkode['netto']['J']:0;
+								$theK = 0;
+
+								$sumF2 += $theF;
+								$sumG2 += $theG;
+								$sumH2 += $theH;
+								$sumI2 += $theI;
+								$sumJ2 += $theJ;
+								$sumK2 += $theK;
+						?>
+							<tr>
+								<td>&nbsp;</td>
+								<td>- <?=$ktype==='Highrise'?'Luas Netto':'Luas Bang'?></td>
+								<td class="text-right"><?=$theF?></td>
+								<td class="text-right"><?=$theG?></td>
+								<td class="text-right"><?=$theH?></td>
+								<td class="text-right"><?=$theI?></td>
+								<td class="text-right"><?=$theJ?></td>
+								<td class="text-right"><?=$theK?></td>
+								<td class="text-right"><?=$theI?></td>
+								<td class="text-right"><?=$theI-$theJ?></td>
+							</tr>
+						<?php 
+								$theF = isset($vkode['gross']['F'])?$vkode['gross']['F']:0;
+								$theG = isset($vkode['gross']['G'])?$vkode['gross']['G']:0;
+								$theH = 0;
+								$theI = $theF+$theG;
+								$theJ = isset($vkode['gross']['J'])?$vkode['gross']['J']:0;
+								$theK = 0;
+
+								$sumF3 += $theF;
+								$sumG3 += $theG;
+								$sumH3 += $theH;
+								$sumI3 += $theI;
+								$sumJ3 += $theJ;
+								$sumK3 += $theK;
+						?>
+							<tr>
+								<td>&nbsp;</td>
+								<td>- <?=$ktype==='Highrise'?'Luas Semi Gross':'Luas Tanah'?></td>
+								<td class="text-right"><?=$theF?></td>
+								<td class="text-right"><?=$theG?></td>
+								<td class="text-right"><?=$theH?></td>
+								<td class="text-right"><?=$theI?></td>
+								<td class="text-right"><?=$theJ?></td>
+								<td class="text-right"><?=$theK?></td>
+								<td class="text-right"><?=$theI?></td>
+								<td class="text-right"><?=$theI-$theJ?></td>
+							</tr>
+						<?php 
+								$theF = isset($vkode['rp']['F'])?$vkode['rp']['F']:0;
+								$theG = isset($vkode['rp']['G'])?$vkode['rp']['G']:0;
+								$theH = 0;
+								$theI = $theF+$theG;
+								$theJ = isset($vkode['rp']['J'])?$vkode['rp']['J']:0;
+								$theK = 0;
+
+								$sumF4 += $theF;
+								$sumG4 += $theG;
+								$sumH4 += $theH;
+								$sumI4 += $theI;
+								$sumJ4 += $theJ;
+								$sumK4 += $theK;
+						?>
+							<tr>
+								<td>&nbsp;</td>
+								<td>- Omzet Netto</td>
+								<td class="text-right input-numeric"><?=$theF?></td>
+								<td class="text-right input-numeric"><?=$theG?></td>
+								<td class="text-right input-numeric"><?=$theH?></td>
+								<td class="text-right input-numeric"><?=$theI?></td>
+								<td class="text-right input-numeric"><?=$theJ?></td>
+								<td class="text-right input-numeric"><?=$theK?></td>
+								<td class="text-right input-numeric"><?=$theI?></td>
+								<td class="text-right input-numeric"><?=$theI-$theJ?></td>
+							</tr>
+						<?php
+								$nourut++;
+							}
+						?>
+							<tr>
+								<td colspan="10">&nbsp;</td>
+							</tr>
+							<tr>
+								<td colspan="10">Total <?=$ktype?></td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+								<td>- Unit</td>
+								<td class="text-right"><?=$sumF1?></td>
+								<td class="text-right"><?=$sumG1?></td>
+								<td class="text-right"><?=$sumH1?></td>
+								<td class="text-right"><?=$sumI1?></td>
+								<td class="text-right"><?=$sumJ1?></td>
+								<td class="text-right"><?=$sumK1?></td>
+								<td class="text-right"><?=$sumI1?></td>
+								<td class="text-right"><?=$sumI1-$sumJ1?></td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+								<td>- <?=$ktype==='Highrise'?'Luas Netto':'Luas Bang'?></td>
+								<td class="text-right"><?=$sumF2?></td>
+								<td class="text-right"><?=$sumG2?></td>
+								<td class="text-right"><?=$sumH2?></td>
+								<td class="text-right"><?=$sumI2?></td>
+								<td class="text-right"><?=$sumJ2?></td>
+								<td class="text-right"><?=$sumK2?></td>
+								<td class="text-right"><?=$sumI2?></td>
+								<td class="text-right"><?=$sumI2-$sumJ2?></td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+								<td>- <?=$ktype==='Highrise'?'Luas Semi Gross':'Luas Tanah'?></td>
+								<td class="text-right"><?=$sumF3?></td>
+								<td class="text-right"><?=$sumG3?></td>
+								<td class="text-right"><?=$sumH3?></td>
+								<td class="text-right"><?=$sumI3?></td>
+								<td class="text-right"><?=$sumJ3?></td>
+								<td class="text-right"><?=$sumK3?></td>
+								<td class="text-right"><?=$sumI3?></td>
+								<td class="text-right"><?=$sumI3-$sumJ3?></td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+								<td>- Omzet Netto</td>
+								<td class="text-right input-numeric"><?=$sumF4?></td>
+								<td class="text-right input-numeric"><?=$sumG4?></td>
+								<td class="text-right input-numeric"><?=$sumH4?></td>
+								<td class="text-right input-numeric"><?=$sumI4?></td>
+								<td class="text-right input-numeric"><?=$sumJ4?></td>
+								<td class="text-right input-numeric"><?=$sumK4?></td>
+								<td class="text-right input-numeric"><?=$sumI4?></td>
+								<td class="text-right input-numeric"><?=$sumI4-$sumJ4?></td>
+							</tr>
+							<tr>
+								<td colspan="10">&nbsp;</td>
+							</tr>
+						<?php
+						} ?>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</section>
+<!-- End: Content -->

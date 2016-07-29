@@ -1,0 +1,7 @@
+Record pertama untuk pengisian jurnal harus pada baris ke 4 & judul header tidak boleh diganti,,,,,,,,,,,,,,,
+"Format Tanggal harus date,  format rupiah dan volume harus number",,,,,,,,,,,,,,,
+Kode_divisi,tanggal,no_bukti,no_terbit,kode_coa,kode_nasabah,kode_sumberdaya,kode_spk,kode_tahap,no_invoice,kode_faktur,bukti_potong, volume ,uraian,dk, rupiah 
+V,02/01/2015,010004/01/B/15,,11121,HC80,,5WPA01,GBMV01,,,, -   ,BUNGA DEPOSITO,D," 264,986,300 "
+V,02/01/2015,010004/01/B/15,,11111,HC80,,5WPA01,GBMV01,,,, -   ,BUNGA DEPOSITO,K," 264,986,300 "
+V,02/01/2015,010005/01/B/15,,11131,,,5WPA01,GBMV01,,,, -   ,BUNGA DEPOSITO B,D," 264,986,300 "
+V,02/01/2015,010003/01/B/15,,11111,,,5WPA01,GBMV01,,,, -   ,BUNGA DEPOSITO B,K," 264,986,300 "

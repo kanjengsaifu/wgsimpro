@@ -1,0 +1,144 @@
+<!-- Begin: Content -->
+<section id="content">
+
+    <div class="row">
+        <div class="col-md-12 pn">
+            <div class="panel mbn">
+                <div class="panel-body">
+                    <form class="form-horizontal" role="form" action="javascript:" id="form-info-entity">
+                        <div class="form-group mbn">
+                            <label class="col-lg-2 control-label">Nama Kawasan / Entity</label>
+                            <div class="col-lg-2">
+                                <p class="form-control-static text-muted" id="pnama"></p>
+                            </div> 
+                            <label class="col-lg-2 control-label">Jenis Pekerjaan</label>
+                            <div class="col-lg-2">
+                                <p class="form-control-static text-muted" id="pjenis"></p>
+                            </div>
+                        </div>
+                        <div class="form-group mbn">
+                            <label class="col-lg-2 control-label">Tanggal Mulai</label>
+                            <div class="col-lg-2">
+                                <p class="form-control-static text-muted" id="ptgl_mulai"></p>
+                            </div> 
+                            <label class="col-lg-2 control-label">Tanggal Selesai</label>
+                            <div class="col-lg-2">
+                                <p class="form-control-static text-muted" id="ptgl_selesai"></p>
+                            </div>
+                        </div>
+                        <div class="form-group mbn">
+                            <label class="col-lg-2 control-label">Tipe Entity</label>
+                            <div class="col-lg-2">
+                                <p class="form-control-static text-muted" id="ptipe_entity"></p>
+                            </div> 
+                            <label class="col-lg-2 control-label">Nilai RIK</label>
+                            <div class="col-lg-2">
+                                <p class="form-control-static text-muted" id="pnilai_developer">0.00</p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 pn">
+            <div class="panel">
+                <div class="panel-body">
+                	<form class="form-horizontal" role="form" action="javascript:" id="form-input">
+                        <input type="hidden" name="kode_entity" id="kode_entity"/>
+                        <div class="form-group">
+                            <label class="col-lg-1 control-label">Periode&nbsp;<span class="text-danger">*</span></label>
+                            <div class="col-lg-1">
+                                <input type="text" name="tahun" id="tahun" class="form-control input-sm input-date required">
+                            </div>
+                            <label class="col-lg-2 control-label">Type Property</label>
+                            <div class="col-lg-3">
+                                <select id="sel-type_property" class="chosen-select">
+                                    <option value=""></option>
+                                <?php foreach ($data['type_property'] as $k => $v) { ?>
+                                    <option value="<?=$v['kode']?>"><?=$v['konten']?></option>
+                                <?php } ?>
+                                </select>
+                            </div>
+                            <div class="col-lg-2">
+                                <a href="javascript:" alt="View Data" title="View Data" class="label label-primary btn-view-root"><span class="fa fa-search"></span> View</a>&nbsp;&nbsp;
+                                <a href="javascript:" alt="Add Header" title="Add Header" class="label label-success btn-add-header"><span class="fa fa-plus"></span> Add Header</a>
+                            </div>
+                        </div>
+                        <div id="container-form"></div>
+                        <div class="form-group">
+                            <div class="col-lg-12"><hr class="mn"/></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-10 control-label">&nbsp;</label>
+                            <div class="col-lg-2">
+                                <button type="button" id="btn-submit" class="btn btn-primary btn-gradient dark btn-block">Submit</button>
+                            </div>
+                        </div>
+                	</form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal -->
+    <div class="modal fade" role="dialog" id="modalUnits">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Daftar Unit</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <form class="form-horizontal" role="form" action="javascript:" id="form-view-units"></form>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer" style="text-align: center">
+                    <button type="button" id="btn-submit-unit" class="btn btn-primary btn-gradient dark btn-block">Submit</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!-- modal end -->
+
+    <!-- modal -->
+    <div class="modal fade" role="dialog" id="modalItems">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Target Item</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <form class="form-horizontal" role="form" action="javascript:" id="form-target-item">
+                                <div class="form-group">
+                                    <label class="col-lg-2 control-label">Jenis Biaya</label>
+                                    <div class="col-lg-4">
+                                        <select id="type_cost" class="chosen-select">
+                                            <option value=""></option>
+                                            <option value="BL">Biaya Langsung</option>
+                                            <option value="BTL">Biaya Tak Langsung</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer" style="text-align: center">
+                    <button type="button" id="btn-submit-item" class="btn btn-primary btn-gradient dark btn-block">Submit</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!-- modal end -->
+
+</section>
+<!-- End: Content -->

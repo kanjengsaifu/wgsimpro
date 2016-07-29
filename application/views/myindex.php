@@ -1,0 +1,1 @@
+<a href='<?php echo site_url('laporan/doprint');?>'>print sekarang</a>
